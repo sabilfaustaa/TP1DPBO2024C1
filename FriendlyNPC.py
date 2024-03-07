@@ -8,7 +8,7 @@ class FriendlyNPC(NPC):
 
     def give_quest(self, player):
         required_item = "Obat Misterius"
-        if any(item.name == required_item for item in player.inventory):
+        if any(item.get_name() == required_item for item in player.inventory):
             if self.quests:
                 quest = self.quests.pop(0)
                 print(f"{self._name} memberikan quest: {quest.title}")
